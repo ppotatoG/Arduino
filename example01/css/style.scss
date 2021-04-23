@@ -1,0 +1,26 @@
+*{margin: 0; padding: 0; list-style: none;}
+
+button {
+    padding: 10px;
+}
+.sparkle-box {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    margin-top: 20px;
+    animation-name : sparkle;
+    animation-duration: .5s;
+}
+.list-box {
+    height: 50vh;
+    width: 200px;
+    overflow-y: scroll;
+    border: 1px solid #222;
+    margin-top: 20px;
+}
+
+@keyframes sparkle {
+    0% {background-color: #eee;}
+    50% {background-color: gold;}
+    100% {background-color: #eee;}
+}
