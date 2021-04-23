@@ -3,7 +3,7 @@ function addList(t){
 
     const txtList = document.querySelector('ul.list-box')
     const liNode = document.createElement('li')
-    let textNode = document.createTextNode(Li.length + t)
+    let textNode = document.createTextNode(Li.length + ". " + t)
 
     txtList.appendChild(liNode)
     liNode.appendChild(textNode)
@@ -12,7 +12,10 @@ function addList(t){
 const sw_01 = document.querySelector('button[name=switch01]')
 const sw_02 = document.querySelector('button[name=switch02]')
 
-
 sw_01.addEventListener('click', function(){
-    addList('클릭')
+    addList('sw_01 클릭')
+})
+
+sw_02.addEventListener('click', function(){
+    addList('sw_02 클릭')
 })
