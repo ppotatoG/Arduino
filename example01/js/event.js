@@ -1,16 +1,18 @@
 function addList(t){
     let Li = document.querySelectorAll('li')
-    for(i = 0; i < Li.length; i++){
-        console.dir(Li[i])
-        let listNum=i+1
 
-        const txtList = document.querySelector('ul.list-box')
-        const liNode = document.createElement('li')
-        let textNode = document.createTextNode(listNum + t)
+    const txtList = document.querySelector('ul.list-box')
+    const liNode = document.createElement('li')
+    let textNode = document.createTextNode(Li.length + t)
 
-        txtList.appendChild(liNode)
-        liNode.appendChild(textNode)
-    }    
+    txtList.appendChild(liNode)
+    liNode.appendChild(textNode)
 }
 
-addList('메롱');
+const sw_01 = document.querySelector('button[name=switch01]')
+const sw_02 = document.querySelector('button[name=switch02]')
+
+
+sw_01.addEventListener('click', function(){
+    addList('클릭')
+})

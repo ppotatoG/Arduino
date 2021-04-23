@@ -21,7 +21,6 @@ button {
 
 .list-box {
   height: 50vh;
-  width: 200px;
   overflow-y: scroll;
   border: 1px solid #222;
   margin-top: 20px;
