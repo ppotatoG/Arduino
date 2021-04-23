@@ -8,15 +8,28 @@ button {
   padding: 10px;
 }
 
-.sparkle-box {
+.LED {
   width: 50px;
   height: 50px;
   background-color: #eee;
   margin-top: 20px;
   -webkit-animation-name: sparkle;
           animation-name: sparkle;
-  -webkit-animation-duration: .5s;
-          animation-duration: .5s;
+}
+
+.LED.duration {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.LED.Sparkle {
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+.LED.sw_02.Sparkle {
+  -webkit-animation-iteration-count: 5;
+          animation-iteration-count: 5;
 }
 
 .list-box {
@@ -28,10 +41,7 @@ button {
 
 @-webkit-keyframes sparkle {
   0% {
-    background-color: #eee;
-  }
-  50% {
-    background-color: gold;
+    background-color: red;
   }
   100% {
     background-color: #eee;
@@ -40,10 +50,7 @@ button {
 
 @keyframes sparkle {
   0% {
-    background-color: #eee;
-  }
-  50% {
-    background-color: gold;
+    background-color: red;
   }
   100% {
     background-color: #eee;

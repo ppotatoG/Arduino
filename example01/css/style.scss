@@ -1,15 +1,24 @@
 *{margin: 0; padding: 0; list-style: none;}
 
+@mixin Sparkle($count){animation-iteration-count: $count;}
+// @mixin duration($time){animation-duration: $time s;}
+
+
 button {
     padding: 10px;
 }
-.sparkle-box {
+.LED {
     width: 50px;
     height: 50px;
     background-color: #eee;
     margin-top: 20px;
     animation-name : sparkle;
-    animation-duration: .5s;
+    &.duration {animation-duration: 1s;}
+    &.Sparkle {@include Sparkle(1)}
+
+    &.sw_02 {
+        &.Sparkle {@include Sparkle(5)}
+    }
 }
 .list-box {
     height: 50vh;
@@ -19,7 +28,6 @@ button {
 }
 
 @keyframes sparkle {
-    0% {background-color: #eee;}
-    50% {background-color: gold;}
+    0% {background-color: red;}
     100% {background-color: #eee;}
 }
