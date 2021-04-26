@@ -16,11 +16,12 @@ const LED = document.querySelector('.LED')
 sw_01.addEventListener('click', function(){
     addList('sw_01 클릭')
     LED.classList.add('duration')
-    LED.classList.add('Sparkle')
+    LED.classList.add('sparkle')
     setTimeout(function(){
         LED.classList.remove('duration')
-        LED.classList.remove('Sparkle')
-    }, 1000)    
+        LED.classList.remove('sparkle')
+        addList('sw_01 클릭 끝')
+    }, 1000)
 })
 
 sw_02.addEventListener('click', function(){
