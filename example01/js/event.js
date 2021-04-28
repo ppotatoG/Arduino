@@ -19,13 +19,14 @@ console.log(clickTime)
 document.addEventListener('click', function(e){
     const sw_01 = e.target.name =="switch01"
     const sw_02 = e.target.name =="switch02"
+    console.log(clickTime)
 
     clickTime++;
     console. dir(e.target)
 
     addList(e.target.nodeName+' 클릭')
     
-    if(sw_01 && clickTime >= 3){
+    if(sw_01){
         LED.classList.add('duration')
         LED.classList.add('sparkle')
 
@@ -34,9 +35,7 @@ document.addEventListener('click', function(e){
             LED.classList.remove('sparkle')
             addList('sw_01 '+clickTime+'번 클릭 종료')
         }, 1000)
-        if (this.name =="switch02") console.log("성공")
-        else console.log( this )
-        
+        if (this.name =="switch02") console.log("??")
     }  
 })
 // else if(sw_02) {
