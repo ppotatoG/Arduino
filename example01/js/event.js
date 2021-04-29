@@ -11,45 +11,46 @@ function addList(t){
 
 const LED = document.querySelector('.LED')
 const sw_02 = document.querySelector('button[name=switch02]')
+
 let clickTime = 0;
-function fnc(){
+
+function swClickFnc(){
     clickTime++;
-    addList('sw_01 '+clickTime+'번 클릭')
-    if(clickTime > 2) fncLED()   
+    addList('btn1 ' + clickTime + '번 클릭')
+    if(clickTime > 2) glwLED()   
 } 
-function fncLED(){
+
+function glwLED(){
     LED.classList.add('duration')
     LED.classList.add('sparkle')
 
     setTimeout(function(){
         LED.classList.remove('duration')
         LED.classList.remove('sparkle')
-        addList('sw_01 '+clickTime+'번 클릭 종료')
     }, 1000)
     sw_02.addEventListener('click', function(){
-        addList('click')
-        loopLED();
-        time = setInterval(loopLED, 4000);
+        addList('btn2 click')
+        repeatGlwLED();
+        sw2ClickFnc = setInterval(repeatGlwLED, 4000);
     })
 }
 
-let time
+let sw2ClickFnc
 let conut = 0;
-function loopLED(){
+function repeatGlwLED(){
     conut++
-    addList('setInterval 시작')
-    addList(conut)
+    addList(conut+'번째 setInterval')
 
     LED.classList.add('duration')
     LED.classList.add('sparkle')
     setTimeout(function(){
-    addList('setTimeout 시작')
+    addList('setTimeout')
         LED.classList.remove('duration')
         LED.classList.remove('sparkle')
     }, 2000)
 
     if(conut > 4) {
         addList("clearInterval")
-        clearInterval(time)
+        clearInterval(sw2ClickFnc)
     }
 }
