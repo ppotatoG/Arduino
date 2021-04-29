@@ -10,6 +10,8 @@ function addList(t){
 }
 
 const LED = document.querySelector('.LED')
+const sw_02 = document.querySelector('button[name=switch02]')
+
 let clickTime = 0;
 
 console.log(clickTime)
@@ -24,18 +26,14 @@ function fncLED(){
         addList('sw_01 '+clickTime+'번 클릭 종료')
     }, 1000)
 }
-document.addEventListener('click', function(e){
-    const sw_01 = e.target.name =="switch01"
-    const sw_02 = e.target.name =="switch02"
-    
-    if((sw_01 || sw_02)){
-        if (sw_01){
-            clickTime++;
-            addList('sw_01 '+clickTime+'번 클릭')
-            if(clickTime > 2) {
-                fncLED()
-                console.log(e)
-            }            
-        }
-    }
-})
+function fnc(){
+
+    clickTime++;
+    addList('sw_01 '+clickTime+'번 클릭')
+    if(clickTime > 2) {
+        fncLED()
+        sw_02.addEventListener('click', function(){
+            console.log("sw_02")
+        })
+    }     
+}
