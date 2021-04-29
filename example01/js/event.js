@@ -14,8 +14,6 @@ const sw_02 = document.querySelector('button[name=switch02]')
 
 let clickTime = 0;
 
-console.log(clickTime)
-
 function fncLED(){
     LED.classList.add('duration')
     LED.classList.add('sparkle')
@@ -26,14 +24,17 @@ function fncLED(){
         addList('sw_01 '+clickTime+'번 클릭 종료')
     }, 1000)
 }
-function fnc(){
 
-    clickTime++;
-    addList('sw_01 '+clickTime+'번 클릭')
-    if(clickTime > 2) {
-        fncLED()
-        sw_02.addEventListener('click', function(){
-            console.log("sw_02")
-        })
-    }     
-}
+sw_02.addEventListener('click', function(){
+    addList('click')
+    setInterval(function(){
+        addList('setInterval 시작')
+        LED.classList.add('duration')
+        LED.classList.add('sparkle')
+        setTimeout(function(){
+        addList('setTimeout 시작')
+            LED.classList.remove('duration')
+            LED.classList.remove('sparkle')
+        }, 2000)
+    }, 4000)
+})
