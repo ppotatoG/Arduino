@@ -18,7 +18,7 @@ function clickFnc(){
     clickTime++;
     if(clickTime == 3) {
         addList('glwLED() 실행')
-        glwLED()
+        LED()
     }
     else if(clickTime > 3 ) {
         return false;
@@ -27,8 +27,9 @@ function clickFnc(){
         addList('btn1 ' + clickTime + '번 클릭')
     }
 } 
-
-function glwLED(){
+let sw1Fnc
+let sw2Fnc
+function LED(){
     LEDBox.classList.add('duration')
     LEDBox.classList.add('sparkle')
 
@@ -36,16 +37,16 @@ function glwLED(){
         LEDBox.classList.remove('duration')
         LEDBox.classList.remove('sparkle')
     }, 1000)
+
     sw_02.addEventListener('click', function(){
         addList('btn2 click')
-        repeatGlwLED();
-        sw2ClickFnc = setInterval(repeatGlwLED, 4000);
+        LEDfnc2();
+        sw2Fnc = setInterval(LEDfnc2, 4000);
     }, {once: true})
 }
 
-let sw2ClickFnc
 let conut = 0;
-function repeatGlwLED(){
+function LEDfnc2(){
     conut++
     addList(conut+'번째 setInterval')
 
@@ -59,6 +60,6 @@ function repeatGlwLED(){
 
     if(conut > 4) {
         addList("clearInterval")
-        clearInterval(sw2ClickFnc)
+        clearInterval(sw2Fnc)
     }
 }
