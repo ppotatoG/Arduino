@@ -29,13 +29,15 @@ function clickFnc(){
 } 
 function LED(){
     LEDfnc1()
-    sw2Fnc = setInterval(LEDfnc1, 2000);
+    sw1Fnc = setInterval(LEDfnc1, 2000);
 
     sw_02.addEventListener('click', function(){
         clearInterval(sw1Fnc)
-        // addList('btn2 click')
-        // LEDfnc2();
-        // sw2Fnc = setInterval(LEDfnc2, 4000);
+        addList("sw1Fnc clearInterval")
+        
+        addList('btn2 click')
+        LEDfnc2();
+        sw2Fnc = setInterval(LEDfnc2, 4000);
     }, {once: true})
 }
 
