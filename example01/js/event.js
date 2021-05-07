@@ -11,17 +11,17 @@ function addList(t){
 
 const LEDBox = document.querySelector('.LED')
 const sw_02 = document.querySelector('button[name=switch02]')
-const addClass = function(){LEDBox.classList.add('sparkle');}
-const removeClass = function(){LEDBox.classList.remove('sparkle');}
+const addClass = () => LEDBox.classList.add('sparkle')
+const removeClass = () => LEDBox.classList.remove('sparkle')
 
-let clickTime = 0;
-let sw1Fnc;
-let sw2Fnc;
-let conut1 = 0;
-let conut2 = 0;
+let clickTime = 0
+let sw1Fnc
+let sw2Fnc
+let conut1 = 0
+let conut2 = 0
 
 function clickFnc(){
-    clickTime++;
+    clickTime++
 
     if(clickTime == 3) {
 
@@ -32,7 +32,7 @@ function clickFnc(){
 
     else if(clickTime > 3 ) {
 
-        return false;
+        return false
 
     }
 
@@ -45,7 +45,7 @@ function clickFnc(){
 
 function LED(){
     LEDfnc1()
-    sw1Fnc = setInterval(LEDfnc1, 2000);
+    sw1Fnc = setInterval(LEDfnc1, 2000)
 
     sw_02.addEventListener('click', function(){
 
@@ -57,9 +57,9 @@ function LED(){
 
         addList('btn2 클릭')
 
-        LEDfnc2();
+        LEDfnc2()
 
-        sw2Fnc = setInterval(LEDfnc2, 4000);
+        sw2Fnc = setInterval(LEDfnc2, 4000)
 
     }, {once: true})
 }
