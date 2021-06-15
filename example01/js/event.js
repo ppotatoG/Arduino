@@ -23,24 +23,9 @@ let conut2 = 0
 function clickFnc(){
     clickTime++
 
-    if(clickTime == 3) {
-
-        addList('LED() 실행')
-
-        LED()
-    }
-
-    else if(clickTime > 3 ) {
-
-        return false
-
-    }
-
-    else {
-
-        addList('btn1 ' + clickTime + '번 클릭')
-
-    }
+    if(clickTime == 3) addList('LED() 실행'), LED() 
+    else if(clickTime > 3 ) addList('clickTime 초기화')
+    else addList('btn1 ' + clickTime + '번 클릭')
 } 
 
 function LED(){
@@ -55,11 +40,11 @@ function LED(){
 
         removeClass()
 
-        addList('btn2 클릭')
-
         LEDfnc2()
 
         sw2Fnc = setInterval(LEDfnc2, 4000)
+
+        clickTime = 0
 
     }, {once: true})
 }
